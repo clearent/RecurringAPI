@@ -585,6 +585,333 @@ the URL.  https://gateway-sb.clearent.net/rest/v2/customers/<strong>cust_dr3fiY9
 </div>
 
 <div class="container">
+    <h3>Create a Token and assoicate with a customer</h3>
+
+    <p> All fields are in alpha-numeric format</p>
+
+    <table class="api">
+        <tr>
+            <td><strong>Field Name</strong></td>
+	     <td>Required</td>
+            <td><strong>Notes</strong></td>
+        </tr>
+        <tr>
+            <td><strong>card</strong></td>
+            <td>Required</td>
+            <td>card number to create the card token with</td>
+        </tr>
+        <tr>
+            <td><strong>card-type</strong></td>
+		<td>Required</td>
+            <td>Type of card</td>
+        </tr>
+        <tr>
+            <td><strong>exp-date</strong></td>
+             <td>Required</td>
+            <td>expire date of the card </td>
+        </tr>
+        <tr>
+            <td><strong>customer-profile-id</strong></td>
+              <td>Optional</td>
+            <td>customer to assoicate to the token.  This is required if you want to use this token wiht plans/customers</td>
+        </tr>
+        <tr>
+            <td><strong>csc</strong></td>
+            <td>Required</td>
+            <td>CSC of the card</td>
+        </tr>
+        <tr>
+            <td><strong>description</strong></td>
+            <td>Required</td>
+            <td>description of the card (ie joint card) </td>
+        </tr>
+	 <tr>
+            <td><strong>avs-address</strong></td>
+            <td>Optional</td>
+            <td>Optional depending on your AVS settings.  </td>
+        </tr>
+	 <tr>
+            <td><strong>avs-required</strong></td>
+            <td>Optional</td>
+            <td>defaults to true. If set to false will not validate avs address</td>
+        </tr>
+         <tr>
+            <td><strong>avs-zip</strong></td>
+            <td>optional</td>
+            <td>billing zip of the card number</td>
+        </tr>
+      
+    </table>
+
+
+    <h3> Create a token </h3>
+
+    <p>Plan must have a customer-profile-id from a previously related customer.   You can POST application/xml or application/json  to the service.  Make sure you include a valid api-key 
+
+in the header</p>
+
+    <table class="api" class="api">
+        <tr>
+            <td>XML Request</td>
+            <td>XML Response</td>
+        <tr>
+            <td>
+    <textarea>
+   	<token>
+    	  <card>4111111111111111</card>
+  	  <card-type>VISA</card-type>
+   	 <exp-date>0819</exp-date>
+    	<csc>999</csc>
+    	<description>test</description>
+    	<avs-address>123 test</avs-address>
+    	<avs-zip>123456</avs-zip>
+	<customer-profile-id>cust_dr3fiY91UYIP</customer-profile-id>	
+      </token>
+    </textarea>
+            </td>
+            <td>
+    <textarea>
+   	
+
+<response>
+   <code>200</code>
+   <status>success</status>
+   <exchange-id>ID-STLLAP028-52999-1418744488048-0-7</exchange-id>
+   <payload type="token">
+      <token>
+         <token-id>1100000013372201111</token-id>
+         <times-used>0</times-used>
+         <status>Active</status>
+         <customer-profile-id>cust_dr3fiY91UYIP</customer-profile-id>
+         <created>2014-12-16T15:50:56.549Z</created>
+         <last-four-digits>1111</last-four-digits>
+         <card-type>VISA</card-type>
+         <description>test</description>
+         <avs-address>123 test</avs-address>
+         <avs-zip>123456</avs-zip>
+      </token>
+   </payload>
+</response>
+
+    </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>JSON Request</td>
+            <td>JSON Response</td>
+        <tr>
+            <td>
+    <textarea>
+
+{    
+    "card":"4111111111111111",
+    "card-type":"VISA",
+    "exp-date":"0819",
+    "csc":"999",
+    "avs-address":"123 trest",
+    "avs-zip":"123456",
+    "description":"test",
+    "customer-prolfe-id":"cust_dr3fiY91UYIP"
+}
+ 
+    </textarea>
+            </td>
+            <td>
+    <textarea>
+
+{
+  "code": "200",
+  "status": "success",
+  "exchange-id": "ID-STLLAP028-52999-1418744488048-0-10",
+  "payload": {
+    "token": {
+      "status": "Active",
+      "created": "2014-12-16T15:52:43.731Z",
+      "token-id": "1100000000214291111",
+      "times-used": "0",
+      "last-four-digits": "1111",
+      "card-type": "VISA",
+      "description": "test",
+	"customer-prolfe-id":"cust_dr3fiY91UYIP",
+      "avs-address": "123 trest",
+      "avs-zip": "123456"
+    },
+    "payloadType": "token"
+  }
+}
+    </textarea>
+            </td>
+        </tr>
+    </table>
+
+
+    <h3>Update a Token</h3>
+
+    <p> You can do an HTTP PUT on the field you want to modify.  There are only 3 modifiable fields on a token. customer-profile-id, status(ACTIVE,INACTIVE,DELETED), description. Anything 
+
+else you want to modify with a token, you will need to delete and readd. First you will need to add the token-id, that was returned on the creation of the token, to the end of the URL: 
+
+<BR>
+     https://gateway-sb.clearent.net/rest/v2/tokens/<strong>1100000000214291111</strong></p>
+
+    <table class="api">
+        <tr>
+            <td>XML Request</td>
+            <td>XML Response</td>
+        <tr>
+            <td>
+    <textarea>
+       <token>
+    	 <description>new token</description>
+    	 <customer-profile-id>cust_dr3fiY91UYIP</customer-profile-id>	
+      </token>
+    </textarea>
+            </td>
+            <td>
+    <textarea>
+
+   <response>
+		<response>
+   <code>200</code>
+    <status>success</status>
+    <exchange-id>ID-STLLAP028-53724-1418747996621-0-10</exchange-id>
+    <payload type="token">
+        <token>
+            <customer-profile-id>cust_dr3fiY91UYIP</customer-profile-id>	
+            <description>new token</description>
+        </token>
+    </payload>
+
+    </textarea>
+            </td>
+
+        <tr>
+            <td>JSON Request</td>
+            <td>JSON Response</td>
+        <tr>
+            <td>
+    <textarea>
+     {    
+   
+   	 "description":"new token ",
+	 "customer-prolfe-id":"cust_dr3fiY91UYIP"
+	}
+    </textarea>
+            </td>
+            <td>
+    <textarea>
+{
+  "code": "200",
+  "status": "success",
+  "exchange-id": "ID-STLLAP028-53724-1418747996621-0-16",
+  "payload": {
+    "token": {
+      "description":"new token ",
+      "customer-prolfe-id":"cust_dr3fiY91UYIP"
+    },
+    "payloadType": "token"
+  }
+}
+    </textarea>
+            </td>
+        </tr>
+    </table>
+
+
+    <h3>Delete</h3>
+
+    <p>To delete a token can use the delete method the URL.  https://gateway-sb.clearent.net/rest/v2/payment-plans/<strong>plan_tz1CRPmjbuXB</strong> You will get a 200 ok, with object 
+
+that was deleted returned to you. 
+
+    </p>
+
+    <table class="api">
+        <tr>
+            <td>XML Request</td>
+            <td>XML Response</td>
+        <tr>
+            <td>
+    <textarea>
+       
+          Method: DELETE
+
+	URL: https://gateway-sb.clearent.net/rest/v2/tokens/1100000013339891111
+
+	REQUEST
+
+	DELETE /rest/v2/tokens/1100000013339891111
+	Host: gateway-sb.clearent.net
+	accept: application/xml
+	api-key: YOURAPIKEYHERE
+	content-type: application/xml
+
+    </textarea>
+            </td>
+            <td>
+    <textarea>
+      <response>
+   <code>200</code>
+    <status>success</status>
+    <exchange-id>ID-STLLAP028-53724-1418747996621-0-10</exchange-id>
+    <payload type="token">
+        <token>
+            <token-id>1100000013339891111</token-id>
+            <description>Token deleted</description>
+        </token>
+    </payload>
+</response>
+
+    </textarea>
+            </td>
+
+        <tr>
+            <td>JSON Request</td>
+            <td>JSON Response</td>
+        <tr>
+            <td>
+    <textarea>
+    		 Method: DELETE
+
+	URL: https://gateway-sb.clearent.net/rest/v2/tokens/1100000013339891111
+
+	REQUEST
+
+	DELETE /rest/v2/tokens/1100000013339891111
+	Host: gateway-sb.clearent.net
+	accept: application/json
+	api-key: YOURAPIKEYHERE
+	content-type: application/json
+    </textarea>
+            </td>
+            <td>
+    <textarea>
+
+  {
+  "code": "200",
+  "status": "success",
+  "exchange-id": "ID-STLLAP028-53724-1418747996621-0-16",
+  "payload": {
+    "token": {
+      "token-id": "1100000001871051111",
+      "description": "Token deleted"
+    },
+    "payloadType": "token"
+  }
+}
+    </textarea>
+            </td>
+    </table>
+
+
+   
+</div>
+
+
+
+
+
+<div class="container">
     <h3> Payment Plan</h3>
 
     <p> All fields are in alpha-numeric format</p>
