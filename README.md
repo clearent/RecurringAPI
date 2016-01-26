@@ -1,7 +1,3 @@
-# RecurringAPI
-Documentation for our recurring API
-
-
 <html>
 <head>
 
@@ -580,6 +576,487 @@ the URL.  https://gateway-sb.clearent.net/rest/v2/customers/<strong>cust_dr3fiY9
 		}-
 }-
 }
+    </textarea>
+            </td>
+    </table>
+
+
+   
+</div>
+
+<div class="container">
+    <h3> Payment Plan</h3>
+
+    <p> All fields are in alpha-numeric format</p>
+
+    <table class="api">
+        <tr>
+            <td><strong>Field Name</strong></td>
+	     <td>Required</td>
+            <td><strong>Notes</strong></td>
+        </tr>
+        <tr>
+            <td><strong>plan-id</strong></td>
+            <td>Resposne Only</td>
+            <td>Unique Identifier for the plan </td>
+        </tr>
+        <tr>
+            <td><strong>plan-name</strong></td>
+		<td>Required</td>
+            <td>Name of the plan</td>
+        </tr>
+        <tr>
+            <td><strong>type</strong></td>
+             <td>Required</td>
+            <td>Currently can only be SUBSCRIPTION </td>
+        </tr>
+        <tr>
+            <td><strong>customer-profile-id</strong></td>
+              <td>Required</td>
+            <td>Unique key for the customer that will be assoicated to the plan</td>
+        </tr>
+        <tr>
+            <td><strong>token-id</strong></td>
+            <td>Required</td>
+            <td>Card token that will be used to make payments on the plan</td>
+        </tr>
+        <tr>
+            <td><strong>frequency</strong></td>
+            <td>Required</td>
+            <td>frequency to make the payment. ONly option is MONTHLY</td>
+        </tr>
+	 <tr>
+            <td><strong>frequency-day</strong></td>
+            <td>Required</td>
+            <td>Day of month to execute the payment</td>
+        </tr>
+	 <tr>
+            <td><strong>payment-amount</strong></td>
+            <td>Required</td>
+            <td>amount to pay at the frequency specified </td>
+        </tr>
+         <tr>
+            <td><strong>start-date</strong></td>
+            <td>Required</td>
+            <td>Day to start payment.</td>
+        </tr>
+       <tr>
+            <td><strong>end-date</strong></td>
+            <td>Required</td>
+            <td>Day to end payment. Cannot be longer than 12 months</td>
+        </tr>
+	 <tr>
+            <td><strong>status</strong></td>
+            <td>Required</td>
+            <td>Status of the payment plan.  ACTIVE - payments will fire.  SUSPENDED - no payments will fire, CANCELLED - no payments will fire cannot be restarted </td>
+        </tr>
+        
+    </table>
+
+
+    <h3> Create a Plan </h3>
+
+    <p>Plan must have a customer-profile-id from a previously related customer.   You can POST application/xml or application/json  to the service.  Make sure you include a valid api-key 
+
+in the header</p>
+
+    <table class="api" class="api">
+        <tr>
+            <td>XML Request</td>
+            <td>XML Response</td>
+        <tr>
+            <td>
+    <textarea>
+   	<payment-plan>
+		<plan-name>Platinum Gym Membership</plan-name>
+		<type>SUBSCRIPTION</type>p
+		<customer-profile-id>cust_ImZrZLriYdvj</customer-profile-id>
+		<token-id>1100008885022011111</token-id>
+		<frequency>MONTHLY</frequency>
+		<frequency-day>15</frequency-day>
+		<start-date>2016-01-01</start-date>
+		<end-date>2016-01-01</end-date>
+		<status>ACTIVE</status>
+		  <payment-amount>50.00</payment-amount>
+	</payment-plan>
+    </textarea>
+            </td>
+            <td>
+    <textarea>
+   	<response>
+		<code>201</code>
+		<status>SUCCESS</status>
+		<exchange-id>430b9ace-7bde-4a15-b367-6b803277b689</exchange-id>
+		 <links>
+		<rel>self</rel>
+		<href>https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_n30dbi2SFiGS</href>
+		 </links>
+		<payload type="payment-plan">
+			 <payment-plan>
+				<plan-id>plan_n30dbi2SFiGS</plan-id>
+				<plan-name>Platinum Gym Membership</plan-name>
+				<type>SUBSCRIPTION</type>
+				<customer-profile-id>cust_ImZrZLriYdvj</customer-profile-id>
+				<token-id>1100008885022011111</token-id>
+				<frequency>MONTHLY</frequency>
+				<frequency-day>15</frequency-day>
+				<payment-amount>50.00</payment-amount>
+				<start-date>2016-01-01</start-date>
+				<end-date>2016-01-01</end-date>
+				<status>ACTIVE</status>
+				<status-date>2016-01-26 19:43:04</status-date>
+			 <links>
+			 <link>
+				<rel>self</rel>
+				<href>https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_n30dbi2SFiGS</href>
+			 </link>
+			 <link>
+				<rel>customers</rel>
+				<href>https://gateway-sb.clearent.net/rest/v2/customers/cust_ImZrZLriYdvj</href>
+			 </link>
+			 <link>
+				<rel>tokens</rel>
+				<href>https://gateway-sb.clearent.net/rest/v2/tokens/1100008885022011111</href>
+				 </link>
+			 </links>
+		<metadata />
+	 </payment-plan>
+	</payload>
+ </response>
+
+    </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>JSON Request</td>
+            <td>JSON Response</td>
+        <tr>
+            <td>
+    <textarea>
+     {
+		"plan-name":"Platinum Gym Membership",
+		"type":"SUBSCRIPTION",
+		"customer-profile-id":"cust_ImZrZLriYdvj",
+		"token-id":"1100008885022011111",
+		"frequency":"MONTHLY",
+		"frequency-day":"15",
+		"start-date":"2016-01-01",
+		"end-date":"2016-01-01",
+		"status":"ACTIVE",
+		"payment-amount":"50.00"
+	}
+    </textarea>
+            </td>
+            <td>
+    <textarea>
+	{
+		"code": "201"
+		"status": "SUCCESS"
+		"exchange-id": "f1abade3-335f-41bd-b8d5-f1e55ab5550e"
+		"links": [1]
+			0:  {
+			"rel": "self"
+			"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
+		}-
+
+		"payload": {
+			"payloadType": "payment-plan"
+			"payment-plan": {
+			"type": "SUBSCRIPTION"
+			"frequency": "MONTHLY"
+			"plan-id": "plan_tz1CRPmjbuXB"
+			"plan-name": "Platinum Gym Membership"
+			"customer-profile-id": "cust_ImZrZLriYdvj"
+			"token-id": "1100008885022011111"
+			"frequency-day": "15"
+			"payment-amount": "50.00"
+			"start-date": "2016-01-01"
+			"end-date": "2016-01-01"
+			"status": "ACTIVE"
+			"status-date": "2016-01-26 19:49:12"
+			"links": {
+			"link": [3]
+				0:  {
+				"rel": "self"
+				"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
+				}-
+				1:  {
+				"rel": "customers"
+				"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_ImZrZLriYdvj"
+				}-
+				2:  {
+				"rel": "tokens"
+				"href": "https://gateway-sb.clearent.net/rest/v2/tokens/1100008885022011111"
+				}-
+		
+				}-
+			}-
+		}-
+	}
+    </textarea>
+            </td>
+        </tr>
+    </table>
+
+
+    <h3>Update a Payment Plan</h3>
+
+    <p> You can do an HTTP PUT on any field in the payment plan object.  It will update that row in the object.  Keep in mind that updates to payment plans are first in and first out.      
+
+ First you will need to add the plan-id, that was returned on the creation of the customer, to the end of the URL: <BR>
+     https://gateway-sb.clearent.net/rest/v2/plans/<strong>plan_tz1CRPmjbuXB</strong></p>
+
+    <table class="api">
+        <tr>
+            <td>XML Request</td>
+            <td>XML Response</td>
+        <tr>
+            <td>
+    <textarea>
+    	<payment-plan>
+		<plan-name>Platinum Gym Membership 3</plan-name>
+        <payment-plan>
+    </textarea>
+            </td>
+            <td>
+    <textarea>
+
+   <response>
+		<code>200</code>
+		<status>SUCCESS</status>
+		<exchange-id>430b9ace-7bde-4a15-b367-6b803277b689</exchange-id>
+		 <links>
+		<rel>self</rel>
+		<href>https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_n30dbi2SFiGS</href>
+		 </links>
+		<payload type="payment-plan">
+			 <payment-plan>
+				<plan-id>plan_n30dbi2SFiGS</plan-id>
+				<plan-name>Platinum Gym Membership 3</plan-name>
+				<type>SUBSCRIPTION</type>
+				<customer-profile-id>cust_ImZrZLriYdvj</customer-profile-id>
+				<token-id>1100008885022011111</token-id>
+				<frequency>MONTHLY</frequency>
+				<frequency-day>15</frequency-day>
+				<payment-amount>50.00</payment-amount>
+				<start-date>2016-01-01</start-date>
+				<end-date>2016-01-01</end-date>
+				<status>ACTIVE</status>
+				<status-date>2016-01-26 19:43:04</status-date>
+			 <links>
+			 <link>
+				<rel>self</rel>
+				<href>https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_n30dbi2SFiGS</href>
+			 </link>
+			 <link>
+				<rel>customers</rel>
+				<href>https://gateway-sb.clearent.net/rest/v2/customers/cust_ImZrZLriYdvj</href>
+			 </link>
+			 <link>
+				<rel>tokens</rel>
+				<href>https://gateway-sb.clearent.net/rest/v2/tokens/1100008885022011111</href>
+				 </link>
+			 </links>
+		<metadata />
+	 </payment-plan>
+	</payload>
+
+    </textarea>
+            </td>
+
+        <tr>
+            <td>JSON Request</td>
+            <td>JSON Response</td>
+        <tr>
+            <td>
+    <textarea>
+     {
+		"plan-name":"Platinum Gym Membership 4"
+	}
+    </textarea>
+            </td>
+            <td>
+    <textarea>
+
+  {
+		"code": "200"
+		"status": "SUCCESS"
+		"exchange-id": "f1abade3-335f-41bd-b8d5-f1e55ab5550e"
+		"links": [1]
+			0:  {
+			"rel": "self"
+			"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
+		}-
+
+		"payload": {
+			"payloadType": "payment-plan"
+			"payment-plan": {
+			"type": "SUBSCRIPTION"
+			"frequency": "MONTHLY"
+			"plan-id": "plan_tz1CRPmjbuXB"
+			"plan-name": "Platinum Gym Membership 4"
+			"customer-profile-id": "cust_ImZrZLriYdvj"
+			"token-id": "1100008885022011111"
+			"frequency-day": "15"
+			"payment-amount": "50.00"
+			"start-date": "2016-01-01"
+			"end-date": "2016-01-01"
+			"status": "ACTIVE"
+			"status-date": "2016-01-26 19:49:12"
+			"links": {
+			"link": [3]
+				0:  {
+				"rel": "self"
+				"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
+				}-
+				1:  {
+				"rel": "customers"
+				"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_ImZrZLriYdvj"
+				}-
+				2:  {
+				"rel": "tokens"
+				"href": "https://gateway-sb.clearent.net/rest/v2/tokens/1100008885022011111"
+				}-
+		
+				}-
+			}-
+		}-
+	}
+    </textarea>
+            </td>
+        </tr>
+    </table>
+
+
+    <h3>Delete</h3>
+
+    <p>You can only Delete Plans that are not active and do not have payments assoicated to them.  If your plan has payments , you will recieve and error. You can update the status of the 
+
+plan to Canceled if it has payments and the plan will be archived after 24 months.   For plans that do NOT have  payments you can use the delete methodthe URL.  https://gateway-
+
+sb.clearent.net/rest/v2/payment-plans/<strong>plan_tz1CRPmjbuXB</strong> You will get a 200 ok, with object that was deleted returned to you. 
+
+    </p>
+
+    <table class="api">
+        <tr>
+            <td>XML Request</td>
+            <td>XML Response</td>
+        <tr>
+            <td>
+    <textarea>
+       
+           Execute the delete function on the URL with the customer-profile
+	    https://gateway-sb.clearent.net/rest/v2/payment-plan/<strong>plan_tz1CRPmjbuXB</strong>
+            In the header you will need to set the api-key and the content-type to application/xml
+
+    </textarea>
+            </td>
+            <td>
+    <textarea>
+        <response>
+		<code>200</code>
+		<status>SUCCESS</status>
+		<exchange-id>430b9ace-7bde-4a15-b367-6b803277b689</exchange-id>
+		 <links>
+		<rel>self</rel>
+		<href>https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_n30dbi2SFiGS</href>
+		 </links>
+		<payload type="payment-plan">
+			 <payment-plan>
+				<plan-id>plan_n30dbi2SFiGS</plan-id>
+				<plan-name>Platinum Gym Membership 3</plan-name>
+				<type>SUBSCRIPTION</type>
+				<customer-profile-id>cust_ImZrZLriYdvj</customer-profile-id>
+				<token-id>1100008885022011111</token-id>
+				<frequency>MONTHLY</frequency>
+				<frequency-day>15</frequency-day>
+				<payment-amount>50.00</payment-amount>
+				<start-date>2016-01-01</start-date>
+				<end-date>2016-01-01</end-date>
+				<status>ACTIVE</status>
+				<status-date>2016-01-26 19:43:04</status-date>
+			 <links>
+			 <link>
+				<rel>self</rel>
+				<href>https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_n30dbi2SFiGS</href>
+			 </link>
+			 <link>
+				<rel>customers</rel>
+				<href>https://gateway-sb.clearent.net/rest/v2/customers/cust_ImZrZLriYdvj</href>
+			 </link>
+			 <link>
+				<rel>tokens</rel>
+				<href>https://gateway-sb.clearent.net/rest/v2/tokens/1100008885022011111</href>
+				 </link>
+			 </links>
+		<metadata />
+	 </payment-plan>
+	</payload>
+	 </response>
+
+
+    </textarea>
+            </td>
+
+        <tr>
+            <td>JSON Request</td>
+            <td>JSON Response</td>
+        <tr>
+            <td>
+    <textarea>
+    		Execute the delete function on the URL with the customer-profile
+	    https://gateway-sb.clearent.net/rest/v2/payment-plan/<strong>plan_n30dbi2SFiGS</strong>
+            In the header you will need to set the api-key and the content-type to application/json
+    </textarea>
+            </td>
+            <td>
+    <textarea>
+
+   {
+		"code": "200"
+		"status": "SUCCESS"
+		"exchange-id": "f1abade3-335f-41bd-b8d5-f1e55ab5550e"
+		"links": [1]
+			0:  {
+			"rel": "self"
+			"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
+		}-
+
+		"payload": {
+			"payloadType": "payment-plan"
+			"payment-plan": {
+			"type": "SUBSCRIPTION"
+			"frequency": "MONTHLY"
+			"plan-id": "plan_tz1CRPmjbuXB"
+			"plan-name": "Platinum Gym Membership 4"
+			"customer-profile-id": "cust_ImZrZLriYdvj"
+			"token-id": "1100008885022011111"
+			"frequency-day": "15"
+			"payment-amount": "50.00"
+			"start-date": "2016-01-01"
+			"end-date": "2016-01-01"
+			"status": "ACTIVE"
+			"status-date": "2016-01-26 19:49:12"
+			"links": {
+			"link": [3]
+				0:  {
+				"rel": "self"
+				"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
+				}-
+				1:  {
+				"rel": "customers"
+				"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_ImZrZLriYdvj"
+				}-
+				2:  {
+				"rel": "tokens"
+				"href": "https://gateway-sb.clearent.net/rest/v2/tokens/1100008885022011111"
+				}-
+		
+				}-
+			}-
+		}-
+	}
     </textarea>
             </td>
     </table>
