@@ -4,33 +4,7 @@ Documentation for our recurring API
 
 <html>
 <head>
-<style type="text/css">
-    html{
-        box-sizing: border-box;
-    }
-    div.container{
-        margin:0 20px;
-        max-width:100% !important;
-    }
-    table.api {
-        border-collapse: collapse;
-        width:100%;
-        max-width:100% !important;
-        table-layout: fixed;
-    }
-    table.api td {
-        border:1px solid #ccc;
-        padding:10px;
-        vertical-align: top;
-    }
-    pre {
-        white-space: pre-wrap;      /* CSS3 */
-        white-space: -moz-pre-wrap; /* Firefox */
-        white-space: -pre-wrap;     /* Opera <7 */
-        white-space: -o-pre-wrap;   /* Opera 7 */
-        word-wrap: break-word;      /* IE */
-    }
-</style>
+
 <script type="text/javascript">
     window.addEventListener(
             "load",
