@@ -202,7 +202,7 @@
 			"zip":"63103",
 			"country":"United States",
 			"phone":"0123456789"
-		}
+		},
 		 
             "shipping-address": {
   			"first-name":"Chip",			
@@ -223,57 +223,61 @@
             <td>
     <textarea>
 	{
-  	"code": "201"
-	"exchange-id": "cba7d34d-9159-40a5-99ec-eddceefb8512"
-	"links": [1]
-		0:  {
-		"rel": "self"
-		"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_dr3fiy91uyip"
-		}-
-
-	"payload": {
-		"payloadType": "customer"
-		"customer": {
-			"email": "testcustomer@clearent.com2"
-			"phone": "01234567892"
-			"comments": "Super loyal customer2"
-			"customer-profile-id": "cust_dr3fiY91UYIP"
-			"first-name": "William2"
-			"last-name": "Biller2"
-			"billing-address": {
-				"company": "We Bill LLC2"
-				"street": "123 Bill St.2"
-				"street2": "Suite 8882"
-				"city": "Richmond2"
-				"state": "MO2"
-				"zip": "631032"
-				"country": "United States2"
-				"phone": "01234567892"
-				"first-name": "William2"
-				"last-name": "Biller2"
-			}-
-			"shipping-address": {
-				"company": "We Ship LLC2"
-				"street": "123 Ship St.2"
-				"street2": "Suite 5552"
-				"city": "Seattle2"
-				"state": "WA2"
-				"zip": "232272"
-				"country": "United States2"
-				"phone": "98765432102"
-				"first-name": "Chip2"
-				"last-name": "Shipper2"
-			}-
-			"links": {
-				"link": [1]
-					0:  {
-					"rel": "self"
-					"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_dr3fiY91UYIP"
-					}-
--
-			}-
-		}-
-}-
+  "code": "201",
+  "exchange-id": "ID-clasbgw01-rps01-5f79acc9-a1c1-4438-af8f-27ca8d315c29",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://gateway-sb.clearent.net/rest/v2/customers"
+    }
+  ],
+  "payload": {
+    "payloadType": "customer",
+    "customer": {
+      "email": "testcustomer@clearent.com",
+      "phone": "0123456789",
+      "comments": "Super loyal customer",
+      "customer-key": "cust_99fe153c-410f-44e8-aef7-9f5dfbf33d16",
+      "first-name": "William",
+      "last-name": "Biller",
+      "billing-address": {
+        "company": "We Bill LLC",
+        "street": "123 Bill St",
+        "street2": "Suite 888",
+        "city": "Richmond",
+        "state": "MO",
+        "zip": "63103",
+        "country": "United States",
+        "phone": "0123456789",
+        "first-name": "Willaim",
+        "last-name": "Biller"
+      },
+      "shipping-address": {
+        "company": "We Ship LLC",
+        "street": "123 Ship St",
+        "street2": "Suite 555",
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "23227",
+        "country": "United States",
+        "phone": "0123456789",
+        "first-name": "Chip",
+        "last-name": "Shipper"
+      },
+      "links": {
+        "link": [
+          {
+            "rel": "self",
+            "href": "https://cgw-backend-sb.clearent.net/rest/v2/customers/cust_99fe153c-410f-44e8-aef7-9f5dfbf33d16"
+          },
+          {
+            "rel": "payment-plans",
+            "href": "https://cgw-backend-sb.clearent.net/rest/v2/payment-plans?customer-key=cust_99fe153c-410f-44e8-aef7-9f5dfbf33d16"
+          }
+        ]
+      }
+    }
+  }
 }
     </textarea>
             </td>
@@ -283,10 +287,8 @@
 
     <h3>Update a Customer</h3>
 
-    <p> You can do an HTTP PUT on any field in the customer object.  It will update that row in the object.  Keep in mind that updates to customers are first in and first out.  First you 
-
-will need to add the customer-profile-id, that was returned on the creation of the customer, to the end of the URL: <BR>
-     https://gateway-sb.clearent.net/rest/v2/customers/<strong>cust_dr3fiY91UYIP</strong></p>
+    <p> You can do an HTTP PUT on any field in the customer object.  It will update that row in the object.  Keep in mind that updates to customers are first in and first out.  First you will need to add the customer-key that was returned on the creation of the customer, to the end of the URL: <BR>
+     https://gateway-sb.clearent.net/rest/v2/customers/<strong>CUSTOMER-KEY-HERE</strong></p>
 
     <table class="api">
         <tr>
@@ -432,11 +434,7 @@ will need to add the customer-profile-id, that was returned on the creation of t
 
     <h3>Delete</h3>
 
-    <p>You can only Delete customers that do not have plans or payments assoicated to them.  If your customer has payments and plans, you will recieve and error. You can update the status 
-
-of the customer to inactive if it has plans or payments and the customer will be archived after 24 months.   For customers that do NOT have plans or payments you can use the delete methon 
-
-the URL.  https://gateway-sb.clearent.net/rest/v2/customers/<strong>cust_dr3fiY91UYIP</strong> You will get a 200 ok, with object that was deleted returned to you. 
+    <p>You can only Delete customers that do not have plans or payments assoicated to them. If your customer has payments and plans, you will recieve an error. You can update the status of the customer to inactive if it has plans or payments and the customer will be archived after 24 months. For customers that do NOT have plans or payments you can use the delete method with the URL and customer-key: https://gateway-sb.clearent.net/rest/v2/customers/<strong>CUSTOMER-KEY-HERE</strong>. You will get a 200 ok, with object that was deleted returned to you.
 
     </p>
 
@@ -448,8 +446,7 @@ the URL.  https://gateway-sb.clearent.net/rest/v2/customers/<strong>cust_dr3fiY9
             <td>
     <textarea>
        
-           Execute the delete function on the URL with the customer-profile
-	    https://gateway-sb.clearent.net/rest/v2/customers/<strong>cust_dr3fiY91UYIP</strong>
+           Execute the delete function on the URL with the customer-key.
             In the header you will need to set the api-key and the content-type to application/xml
 
     </textarea>
@@ -515,8 +512,7 @@ the URL.  https://gateway-sb.clearent.net/rest/v2/customers/<strong>cust_dr3fiY9
         <tr>
             <td>
     <textarea>
-    		Execute the delete function on the URL with the customer-profile
-	    https://gateway-sb.clearent.net/rest/v2/customers/<strong>cust_dr3fiY91UYIP</strong>
+    		Execute the delete function on the URL with the customer-key.
             In the header you will need to set the api-key and the content-type to application/xml
     </textarea>
             </td>
