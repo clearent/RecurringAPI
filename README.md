@@ -365,7 +365,7 @@
     <textarea>
      {
            
-           "first-name":"William22",
+           "first-name":"William22"
            
     }
     </textarea>
@@ -1136,7 +1136,7 @@ in the header</p>
     <textarea>
     	<payment-plan>
 		<plan-name>Platinum Gym Membership 3</plan-name>
-        <payment-plan>
+        </payment-plan>
     </textarea>
             </td>
             <td>
