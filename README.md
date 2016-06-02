@@ -743,7 +743,7 @@ in the header</p>
 
     <h3>Update a Token</h3>
 
-    <p> You can do an HTTP PUT on the field you want to modify.  There are only 3 modifiable fields on a token. customer-profile-id, status(ACTIVE,INACTIVE,DELETED), description. Anything else you want to modify with a token, you will need to delete and readd. First you will need to add the token-id, that was returned on the creation of the token, to the end of the URL: 
+    <p> You can do an HTTP PUT on the field you want to modify.  There are only 3 modifiable fields on a token. customer-key, status(ACTIVE,INACTIVE,DELETED), description. Anything else you want to modify with a token, you will need to delete and readd. First you will need to add the token-id, that was returned on the creation of the token, to the end of the URL: 
 
 <BR>
      https://gateway-sb.clearent.net/rest/v2/tokens/<strong>1100000000214291111</strong></p>
@@ -1286,7 +1286,7 @@ in the header</p>
 				<plan-key>plan_n30dbi2SFiGS</plan-key>
 				<plan-name>Platinum Gym Membership 3</plan-name>
 				<type>SUBSCRIPTION</type>
-				<customer-key>cust_ImZrZLriYdvj</customer-profile-id>
+				<customer-key>cust_ImZrZLriYdvj</customer-key>
 				<token-id>1100008885022011111</token-id>
 				<frequency>MONTHLY</frequency>
 				<frequency-day>15</frequency-day>
