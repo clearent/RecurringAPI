@@ -268,11 +268,11 @@
         "link": [
           {
             "rel": "self",
-            "href": "https://cgw-backend-sb.clearent.net/rest/v2/customers/cust_99fe153c-410f-44e8-aef7-9f5dfbf33d16"
+            "href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_99fe153c-410f-44e8-aef7-9f5dfbf33d16"
           },
           {
             "rel": "payment-plans",
-            "href": "https://cgw-backend-sb.clearent.net/rest/v2/payment-plans?customer-key=cust_99fe153c-410f-44e8-aef7-9f5dfbf33d16"
+            "href": "https://gateway-sb.clearent.net/rest/v2/payment-plans?customer-key=cust_99fe153c-410f-44e8-aef7-9f5dfbf33d16"
           }
         ]
       }
