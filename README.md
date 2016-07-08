@@ -374,57 +374,61 @@
     <textarea>
 
    {
-  	"code": "200"
-	"exchange-id": "cba7d34d-9159-40a5-99ec-eddceefb8512"
-	"links": [1]
-		0:  {
-		"rel": "self"
-		"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_dr3fiy91uyip"
-		}-
-
-	"payload": {
-		"payloadType": "customer"
-		"customer": {
-			"email": "testcustomer@clearent.com2"
-			"phone": "01234567892"
-			"comments": "Super loyal customer2"
-			"customer-key": "cust_dr3fiY91UYIP"
-			"first-name": "William22"
-			"last-name": "Biller2"
-			"billing-address": {
-				"company": "We Bill LLC2"
-				"street": "123 Bill St.2"
-				"street2": "Suite 8882"
-				"city": "Richmond2"
-				"state": "MO2"
-				"zip": "631032"
-				"country": "United States2"
-				"phone": "01234567892"
-				"first-name": "William2"
-				"last-name": "Biller2"
-			}-
-			"shipping-address": {
-				"company": "We Ship LLC2"
-				"street": "123 Ship St.2"
-				"street2": "Suite 5552"
-				"city": "Seattle2"
-				"state": "WA2"
-				"zip": "232272"
-				"country": "United States2"
-				"phone": "98765432102"
-				"first-name": "Chip2"
-				"last-name": "Shipper2"
-			}-
-			"links": {
-				"link": [1]
-					0:  {
-					"rel": "self"
-					"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_dr3fiY91UYIP"
-					}-
--
-			}-
-		}-
-}-
+  "code": "202",
+  "exchange-id": "ID-clasbgw01-rps01-fe826724-771d-4a22-b653-31f595570a97",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https:\/\/gateway-sb.clearent.net\/rest\/v2\/customers\/cust_c59ae124-d56e-4a01-87ae-bf65e6d41c39"
+    }
+  ],
+  "payload": {
+    "customer": {
+      "email": "testcustomer@clearent.com",
+      "phone": "0123456789",
+      "comments": "Super loyal customer",
+      "customer-key": "cust_c59ae124-d56e-4a01-87ae-bf65e6d41c39",
+      "first-name": "William22",
+      "last-name": "Biller",
+      "billing-address": {
+        "company": "We Bill LLC",
+        "street": "123 Bill St",
+        "street2": "Suite 888",
+        "city": "Richmond",
+        "state": "MO",
+        "zip": "63103",
+        "country": "United States",
+        "phone": "0123456789",
+        "first-name": "Willaim",
+        "last-name": "Biller"
+      },
+      "shipping-address": {
+        "company": "We Ship LLC",
+        "street": "123 Ship St",
+        "street2": "Suite 555",
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "23227",
+        "country": "United States",
+        "phone": "0123456789",
+        "first-name": "Chip",
+        "last-name": "Shipper"
+      },
+      "links": {
+        "link": [
+          {
+            "rel": "self",
+            "href": "https:\/\/gateway-sb.clearent.net\/rest\/v2\/customers\/cust_c59ae124-d56e-4a01-87ae-bf65e6d41c39"
+          },
+          {
+            "rel": "payment-plans",
+            "href": "https:\/\/gateway-sb.clearent.net\/rest\/v2\/payment-plans?customer-key=cust_c59ae124-d56e-4a01-87ae-bf65e6d41c39"
+          }
+        ]
+      }
+    },
+    "payloadType": "customer"
+  }
 }
     </textarea>
             </td>
@@ -520,57 +524,44 @@
     <textarea>
 
     {
-  	"code": "200"
-	"exchange-id": "cba7d34d-9159-40a5-99ec-eddceefb8512"
-	"links": [1]
-		0:  {
-		"rel": "self"
-		"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_dr3fiy91uyip"
-		}-
-
-	"payload": {
-		"payloadType": "customer"
-		"customer": {
-			"email": "testcustomer@clearent.com2"
-			"phone": "01234567892"
-			"comments": "Super loyal customer2"
-			"customer-key": "cust_dr3fiY91UYIP"
-			"first-name": "William22"
-			"last-name": "Biller2"
-			"billing-address": {
-				"company": "We Bill LLC2"
-				"street": "123 Bill St.2"
-				"street2": "Suite 8882"
-				"city": "Richmond2"
-				"state": "MO2"
-				"zip": "631032"
-				"country": "United States2"
-				"phone": "01234567892"
-				"first-name": "William2"
-				"last-name": "Biller2"
-			}-
-			"shipping-address": {
-				"company": "We Ship LLC2"
-				"street": "123 Ship St.2"
-				"street2": "Suite 5552"
-				"city": "Seattle2"
-				"state": "WA2"
-				"zip": "232272"
-				"country": "United States2"
-				"phone": "98765432102"
-				"first-name": "Chip2"
-				"last-name": "Shipper2"
-			}-
-			"links": {
-				"link": [1]
-					0:  {
-					"rel": "self"
-					"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_dr3fiY91UYIP"
-					}-
--
-			}-
-		}-
-}-
+  "code": "200",
+  "exchange-id": "ID-clasbgw01-rps01-2e0ac0dd-8a16-4ef8-8427-c67e505e447e",
+  "payload": {
+    "customer": {
+      "email": "testcustomer@clearent.com",
+      "phone": "0123456789",
+      "comments": "Super loyal customer",
+      "customer-key": "cust_c59ae124-d56e-4a01-87ae-bf65e6d41c39",
+      "first-name": "William22",
+      "last-name": "Biller",
+      "billing-address": {
+        "company": "We Bill LLC",
+        "street": "123 Bill St",
+        "street2": "Suite 888",
+        "city": "Richmond",
+        "state": "MO",
+        "zip": "63103",
+        "country": "United States",
+        "phone": "0123456789",
+        "first-name": "Willaim",
+        "last-name": "Biller"
+      },
+      "shipping-address": {
+        "company": "We Ship LLC",
+        "street": "123 Ship St",
+        "street2": "Suite 555",
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "23227",
+        "country": "United States",
+        "phone": "0123456789",
+        "first-name": "Chip",
+        "last-name": "Shipper"
+      },
+      "links": {}
+    },
+    "payloadType": "customer"
+  }
 }
     </textarea>
             </td>
@@ -765,16 +756,16 @@ in the header</p>
     <textarea>
 
    <response>
-		<response>
-   <code>200</code>
+    <code>200</code>
     <status>success</status>
     <exchange-id>ID-STLLAP028-53724-1418747996621-0-10</exchange-id>
     <payload type="token">
         <token>
-            <customer-key>cust_dr3fiY91UYIP</customer-key>	
+            <customer-key>cust_dr3fiY91UYIP</customer-key>
             <description>new token</description>
         </token>
     </payload>
+</response>
 
     </textarea>
             </td>
@@ -1055,67 +1046,88 @@ in the header</p>
             <td>
     <textarea>
      {
-		"plan-name":"Platinum Gym Membership",
-		"type":"SUBSCRIPTION",
-		"customer-key":"cust_ImZrZLriYdvj",
-		"token-id":"1100008885022011111",
-		"frequency":"MONTHLY",
-		"frequency-day":"15",
-		"frequency-month":"10",
-		"start-date":"2016-08-01",
-		"end-date":"2016-12-01",
-		"status":"ACTIVE",
-		"payment-amount":"50.00"
+	"code": "201",
+	"status": "SUCCESS",
+	"exchange-id": "f1abade3-335f-41bd-b8d5-f1e55ab5550e",
+	"links": [{
+		"rel": "self",
+		"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
+	}],
+	"payload": {
+		"payloadType": "payment-plan",
+		"payment-plan": {
+			"type": "SUBSCRIPTION",
+			"frequency": "MONTHLY",
+			"plan-key": "plan_tz1CRPmjbuXB",
+			"plan-name": "Platinum Gym Membership",
+			"customer-key": "cust_ImZrZLriYdvj",
+			"token-id": "1100008885022011111",
+			"frequency-day": "15",
+			"frequency-month": "10",
+			"payment-amount": "50.00",
+			"start-date": "2016-08-01",
+			"end-date": "2016-12-01",
+			"status": "ACTIVE",
+			"status-date": "2016-01-26 19:49:12",
+			"links": {
+				"link": [{
+					"rel": "self",
+					"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
+				}, {
+					"rel": "customers",
+					"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_ImZrZLriYdvj"
+				}, {
+					"rel": "tokens",
+					"href": "https://gateway-sb.clearent.net/rest/v2/tokens/1100008885022011111"
+				}]
+			}
+		}
 	}
+}
     </textarea>
             </td>
             <td>
     <textarea>
-	{
-		"code": "201"
-		"status": "SUCCESS"
-		"exchange-id": "f1abade3-335f-41bd-b8d5-f1e55ab5550e"
-		"links": [1]
-			0:  {
-			"rel": "self"
-			"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
-		}-
-
-		"payload": {
-			"payloadType": "payment-plan"
-			"payment-plan": {
-			"type": "SUBSCRIPTION"
-			"frequency": "MONTHLY"
-			"plan-key": "plan_tz1CRPmjbuXB"
-			"plan-name": "Platinum Gym Membership"
-			"customer-key": "cust_ImZrZLriYdvj"
-			"token-id": "1100008885022011111"
-			"frequency-day": "15"
-			"frequency-month":"10",
-			"payment-amount": "50.00"
-			"start-date": "2016-08-01"
-			"end-date": "2016-12-01"
-			"status": "ACTIVE"
-			"status-date": "2016-01-26 19:49:12"
+	
+{
+	"code": "201",
+	"status": "SUCCESS",
+	"exchange-id": "f1abade3-335f-41bd-b8d5-f1e55ab5550e",
+	"links": [{
+		"rel": "self",
+		"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
+	}],
+	"payload": {
+		"payloadType": "payment-plan",
+		"payment-plan": {
+			"type": "SUBSCRIPTION",
+			"frequency": "MONTHLY",
+			"plan-key": "plan_tz1CRPmjbuXB",
+			"plan-name": "Platinum Gym Membership",
+			"customer-key": "cust_ImZrZLriYdvj",
+			"token-id": "1100008885022011111",
+			"frequency-day": "15",
+			"frequency-month": "10",
+			"payment-amount": "50.00",
+			"start-date": "2016-08-01",
+			"end-date": "2016-12-01",
+			"status": "ACTIVE",
+			"status-date": "2016-01-26 19:49:12",
 			"links": {
-			"link": [3]
-				0:  {
-				"rel": "self"
-				"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
-				}-
-				1:  {
-				"rel": "customers"
-				"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_ImZrZLriYdvj"
-				}-
-				2:  {
-				"rel": "tokens"
-				"href": "https://gateway-sb.clearent.net/rest/v2/tokens/1100008885022011111"
-				}-
-		
-				}-
-			}-
-		}-
+				"link": [{
+					"rel": "self",
+					"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
+				}, {
+					"rel": "customers",
+					"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_ImZrZLriYdvj"
+				}, {
+					"rel": "tokens",
+					"href": "https://gateway-sb.clearent.net/rest/v2/tokens/1100008885022011111"
+				}]
+			}
+		}
 	}
+}
     </textarea>
             </td>
         </tr>
@@ -1201,50 +1213,44 @@ in the header</p>
     <textarea>
 
   {
-		"code": "200"
-		"status": "SUCCESS"
-		"exchange-id": "f1abade3-335f-41bd-b8d5-f1e55ab5550e"
-		"links": [1]
-			0:  {
-			"rel": "self"
-			"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
-		}-
-
-		"payload": {
-			"payloadType": "payment-plan"
-			"payment-plan": {
-			"type": "SUBSCRIPTION"
-			"frequency": "MONTHLY"
-			"plan-key": "plan_tz1CRPmjbuXB"
-			"plan-name": "Platinum Gym Membership 4"
-			"customer-key": "cust_ImZrZLriYdvj"
-			"token-id": "1100008885022011111"
-			"frequency-day": "15"
-			"frequency-month":"10",
-			"payment-amount": "50.00"
-			"start-date": "2016-08-01"
-			"end-date": "2016-12-01"
-			"status": "ACTIVE"
-			"status-date": "2016-01-26 19:49:12"
+	"code": "200",
+	"status": "SUCCESS",
+	"exchange-id": "f1abade3-335f-41bd-b8d5-f1e55ab5550e",
+	"links": [{
+		"rel": "self",
+		"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
+	}],
+	"payload": {
+		"payloadType": "payment-plan",
+		"payment-plan": {
+			"type": "SUBSCRIPTION",
+			"frequency": "MONTHLY",
+			"plan-key": "plan_tz1CRPmjbuXB",
+			"plan-name": "Platinum Gym Membership 4",
+			"customer-key": "cust_ImZrZLriYdvj",
+			"token-id": "1100008885022011111",
+			"frequency-day": "15",
+			"frequency-month": "10",
+			"payment-amount": "50.00",
+			"start-date": "2016-08-01",
+			"end-date": "2016-12-01",
+			"status": "ACTIVE",
+			"status-date": "2016-01-26 19:49:12",
 			"links": {
-			"link": [3]
-				0:  {
-				"rel": "self"
-				"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
-				}-
-				1:  {
-				"rel": "customers"
-				"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_ImZrZLriYdvj"
-				}-
-				2:  {
-				"rel": "tokens"
-				"href": "https://gateway-sb.clearent.net/rest/v2/tokens/1100008885022011111"
-				}-
-		
-				}-
-			}-
-		}-
+				"link": [{
+					"rel": "self",
+					"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
+				}, {
+					"rel": "customers",
+					"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_ImZrZLriYdvj"
+				}, {
+					"rel": "tokens",
+					"href": "https://gateway-sb.clearent.net/rest/v2/tokens/1100008885022011111"
+				}]
+			}
+		}
 	}
+}
     </textarea>
             </td>
         </tr>
@@ -1334,50 +1340,42 @@ in the header</p>
     <textarea>
 
    {
-		"code": "200"
-		"status": "SUCCESS"
-		"exchange-id": "f1abade3-335f-41bd-b8d5-f1e55ab5550e"
-		"links": [1]
-			0:  {
-			"rel": "self"
-			"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
-		}-
-
-		"payload": {
-			"payloadType": "payment-plan"
-			"payment-plan": {
-			"type": "SUBSCRIPTION"
-			"frequency": "MONTHLY"
-			"plan-key": "plan_tz1CRPmjbuXB"
-			"plan-name": "Platinum Gym Membership 4"
-			"customer-key": "cust_ImZrZLriYdvj"
-			"token-id": "1100008885022011111"
-			"frequency-day": "15"
-			"frequency-month":"10",
-			"payment-amount": "50.00"
-			"start-date": "2016-08-01"
-			"end-date": "2016-12-01"
-			"status": "ACTIVE"
-			"status-date": "2016-01-26 19:49:12"
-			"links": {
-			"link": [3]
-				0:  {
-				"rel": "self"
+	"code": "200",
+	"status": "SUCCESS",
+	"exchange-id": "f1abade3-335f-41bd-b8d5-f1e55ab5550e",
+	"links": [{
+		"rel": "self",
+		"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
+	}],
+	"payloadType": "payment-plan",
+	"payment-plan": {
+		"type": "SUBSCRIPTION",
+		"frequency": "MONTHLY",
+		"plan-key": "plan_tz1CRPmjbuXB",
+		"plan-name": "Platinum Gym Membership 4",
+		"customer-key": "cust_ImZrZLriYdvj",
+		"token-id": "1100008885022011111",
+		"frequency-day": "15",
+		"frequency-month": "10",
+		"payment-amount": "50.00",
+		"start-date": "2016-08-01",
+		"end-date": "2016-12-01",
+		"status": "ACTIVE",
+		"status-date": "2016-01-26 19:49:12",
+		"links": {
+			"link": [{
+				"rel": "self",
 				"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
-				}-
-				1:  {
-				"rel": "customers"
+			}, {
+				"rel": "customers",
 				"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_ImZrZLriYdvj"
-				}-
-				2:  {
-				"rel": "tokens"
+			}, {
+				"rel": "tokens",
 				"href": "https://gateway-sb.clearent.net/rest/v2/tokens/1100008885022011111"
-				}-
-		
-				}-
-			}-
-		}-
+			}]
+		}
 	}
+}
     </textarea>
             </td>
     </table>
