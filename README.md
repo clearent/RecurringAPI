@@ -28,7 +28,7 @@
 <div class="container">
     <h3> Customer </h3>
 
-    <p> All fields are in alpha-numeric format</p>
+    <p> All fields are in alphanumeric format. </p>
 
     <table class="api">
         <tr>
@@ -49,7 +49,7 @@
         <tr>
             <td><strong>comments</strong></td>
              <td>Optional</td>
-            <td>Comments on the customer.  Note: on an update these comments will override previous comments. </td>
+            <td>Comments on the customer.  Note: Once updated, these comments will override previous comments. </td>
         </tr>
         <tr>
             <td><strong>customer-key</strong></td>
@@ -59,7 +59,7 @@
         <tr>
             <td><strong>first-name</strong></td>
             <td>Required</td>
-            <td>First Name of the customer</td>
+            <td>First name of the customer</td>
         </tr>
         <tr>
             <td><strong>last-name</strong></td>
@@ -82,7 +82,7 @@
 
     <h3> Create a Customer </h3>
 
-    <p>Customer must be created in order to set up a plan.  You can POST application/xml or application/json  to the service.  Make sure you include a valid api-key in the header</p>
+    <p>Customer must be created in order to set up a plan.  You can POST application/xml or application/json to the service.  Make sure you include a valid api-key in the header.</p>
 
     <table class="api" class="api">
         <tr>
@@ -192,7 +192,7 @@
            "first-name":"William",
            "last-name":"Biller",
             "billing-address": {
-  			"first-name":"Willaim",			
+  			"first-name":"William",			
 			"last-name":"Biller",
 			"company":"We Bill LLC",
 			"street":"123 Bill St",
@@ -249,7 +249,7 @@
         "zip": "63103",
         "country": "United States",
         "phone": "0123456789",
-        "first-name": "Willaim",
+        "first-name": "William",
         "last-name": "Biller"
       },
       "shipping-address": {
@@ -287,7 +287,7 @@
 
     <h3>Update a Customer</h3>
 
-    <p> You can do an HTTP PUT on any field in the customer object.  It will update that row in the object.  Keep in mind that updates to customers are first in and first out.  First you will need to add the customer-key that was returned on the creation of the customer, to the end of the URL: <BR>
+    <p> You can do an HTTP PUT on any field in the customer object, and it will update that row in the object.  Keep in mind that updates to customers are first in and first out.  First, you will need to add the customer-key that was returned on the creation of the customer to the end of the URL: <BR>
      https://gateway-sb.clearent.net/rest/v2/customers/<strong>CUSTOMER-KEY-HERE</strong></p>
 
     <table class="api">
@@ -399,7 +399,7 @@
         "zip": "63103",
         "country": "United States",
         "phone": "0123456789",
-        "first-name": "Willaim",
+        "first-name": "William",
         "last-name": "Biller"
       },
       "shipping-address": {
@@ -438,7 +438,7 @@
 
     <h3>Delete</h3>
 
-    <p>You can only Delete customers that do not have plans or payments assoicated to them. If your customer has payments and plans, you will recieve an error. You can update the status of the customer to inactive if it has plans or payments and the customer will be archived after 24 months. For customers that do NOT have plans or payments you can use the delete method with the URL and customer-key: https://gateway-sb.clearent.net/rest/v2/customers/<strong>CUSTOMER-KEY-HERE</strong>. You will get a 200 ok, with object that was deleted returned to you.
+    <p>You can only Delete customers that do not have plans or payments associated to them. If your customer has payments and plans, you will receive an error. You can update the status of the customer to inactive if they have plans or payments and they will be archived after 24 months. For customers that do NOT have plans or payments you can use the delete method with the URL and customer-key: https://gateway-sb.clearent.net/rest/v2/customers/<strong>CUSTOMER-KEY-HERE</strong>. You will get a 200 ok, with the object that was deleted returned to you.
 
     </p>
 
@@ -451,7 +451,7 @@
     <textarea>
        
            Execute the delete function on the URL with the customer-key.
-            In the header you will need to set the api-key and the content-type to application/xml
+            In the header you will need to set the api-key and the content-type to application/xml.
 
     </textarea>
             </td>
@@ -517,7 +517,7 @@
             <td>
     <textarea>
     		Execute the delete function on the URL with the customer-key.
-            In the header you will need to set the api-key and the content-type to application/xml
+            In the header you will need to set the api-key and the content-type to application/xml.
     </textarea>
             </td>
             <td>
@@ -543,7 +543,7 @@
         "zip": "63103",
         "country": "United States",
         "phone": "0123456789",
-        "first-name": "Willaim",
+        "first-name": "William",
         "last-name": "Biller"
       },
       "shipping-address": {
@@ -572,7 +572,7 @@
 </div>
 
 <div class="container">
-    <h3>Create a Token and assoicate with a customer</h3>
+    <h3>Create a Token and associate with a customer</h3>
 
     <p> All fields are in alpha-numeric format</p>
 
@@ -585,7 +585,7 @@
         <tr>
             <td><strong>card</strong></td>
             <td>Required</td>
-            <td>card number to create the card token with</td>
+            <td>Card number to create the card token with</td>
         </tr>
         <tr>
             <td><strong>card-type</strong></td>
@@ -595,12 +595,12 @@
         <tr>
             <td><strong>exp-date</strong></td>
              <td>Required</td>
-            <td>expire date of the card </td>
+            <td>expiration date of the card </td>
         </tr>
         <tr>
             <td><strong>customer-key</strong></td>
               <td>Optional</td>
-            <td>customer to assoicate to the token.  This is required if you want to use this token with plans/customers</td>
+            <td>customer to associate to the token.  This is required if you want to use this token with plans/customers</td>
         </tr>
         <tr>
             <td><strong>csc</strong></td>
@@ -610,7 +610,7 @@
         <tr>
             <td><strong>description</strong></td>
             <td>Required</td>
-            <td>description of the card (ie joint card) </td>
+            <td>description of the card (i.e. - business card) </td>
         </tr>
 	 <tr>
             <td><strong>avs-address</strong></td>
@@ -620,12 +620,12 @@
 	 <tr>
             <td><strong>avs-required</strong></td>
             <td>Optional</td>
-            <td>defaults to true. If set to false will not validate avs address</td>
+            <td>defaults to true. If set to false, it will not validate avs address</td>
         </tr>
          <tr>
             <td><strong>avs-zip</strong></td>
             <td>optional</td>
-            <td>billing zip of the card number</td>
+            <td>billing zip code of the card number</td>
         </tr>
       
     </table>
@@ -633,7 +633,7 @@
 
     <h3> Create a token </h3>
 
-    <p>Plan must have a customer-key from a previously related customer.  Use url https://gateway-sb.clearent.net/rest/v2/tokens You can POST application/xml or application/json  to the service.  Make sure you include a valid api-key. 
+    <p>Plan must have a customer-key from a previously related customer.  Use url https://gateway-sb.clearent.net/rest/v2/tokens You can POST application/xml or application/json to the service.  Make sure you include a valid api-key. 
 
 in the header</p>
 
@@ -695,7 +695,7 @@ in the header</p>
     "card-type":"VISA",
     "exp-date":"0819",
     "csc":"999",
-    "avs-address":"123 trest",
+    "avs-address":"123 test",
     "avs-zip":"123456",
     "description":"test",
     "customer-key":"cust_dr3fiY91UYIP"
@@ -720,7 +720,7 @@ in the header</p>
       "card-type": "VISA",
       "description": "test",
 	"customer-key":"cust_dr3fiY91UYIP",
-      "avs-address": "123 trest",
+      "avs-address": "123 test",
       "avs-zip": "123456"
     },
     "payloadType": "token"
@@ -734,7 +734,7 @@ in the header</p>
 
     <h3>Update a Token</h3>
 
-    <p> You can do an HTTP PUT on the field you want to modify.  There are only 3 modifiable fields on a token. customer-key, status(ACTIVE,INACTIVE,DELETED), description. Anything else you want to modify with a token, you will need to delete and readd. First you will need to add the token-id, that was returned on the creation of the token, to the end of the URL: 
+    <p> You can do an HTTP PUT on the field you want to modify.  There are only 3 modifiable fields on a token; customer-key, status (ACTIVE, INACTIVE, DELETED), description. Anything else you want to modify with a token, you will need to delete and re-add. First, you will need to add the token-id, that was returned on the creation of the token, to the end of the URL: 
 
 <BR>
      https://gateway-sb.clearent.net/rest/v2/tokens/<strong>1100000000214291111</strong></p>
@@ -805,7 +805,7 @@ in the header</p>
 
     <h3>Delete</h3>
 
-    <p>To delete a token can use the delete method the URL.  https://gateway-sb.clearent.net/rest/v2/tokens/<strong>1100000000214291111</strong> You will get a 200 ok, with object that was deleted returned to you. 
+    <p>To delete a token, you can use the delete method with URL.  https://gateway-sb.clearent.net/rest/v2/tokens/<strong>1100000000214291111</strong> You will get a 200 ok, with the object that was deleted returned to you. 
 
     </p>
 
@@ -897,7 +897,7 @@ in the header</p>
 <div class="container">
     <h3> Payment Plan</h3>
 
-    <p> All fields are in alpha-numeric format</p>
+    <p> All fields are in alpha-numeric format.</p>
 
     <table class="api">
         <tr>
@@ -907,7 +907,7 @@ in the header</p>
         </tr>
         <tr>
             <td><strong>plan-key</strong></td>
-            <td>Resposne Only</td>
+            <td>Response Only</td>
             <td>Unique Identifier for the plan </td>
         </tr>
         <tr>
@@ -923,7 +923,7 @@ in the header</p>
         <tr>
             <td><strong>customer-key</strong></td>
               <td>Required</td>
-            <td>Unique key for the customer that will be assoicated to the plan</td>
+            <td>Unique key for the customer that will be associated to the plan</td>
         </tr>
         <tr>
             <td><strong>token-id</strong></td>
@@ -933,7 +933,7 @@ in the header</p>
         <tr>
             <td><strong>frequency</strong></td>
             <td>Required</td>
-            <td>frequency to make the payment. Only option is MONTHLY</td>
+            <td>Frequency to make the payment. Only option is MONTHLY</td>
         </tr>
 	<tr>
             <td><strong>frequency-day</strong></td>
@@ -943,7 +943,7 @@ in the header</p>
 	<tr>
             <td><strong>payment-amount</strong></td>
             <td>Required</td>
-            <td>amount to pay at the frequency specified </td>
+            <td>Amount to pay with the frequency specified </td>
         </tr>
         <tr>
             <td><strong>start-date</strong></td>
@@ -958,7 +958,7 @@ in the header</p>
 	 <tr>
             <td><strong>status</strong></td>
             <td>Required</td>
-            <td>Status of the payment plan.  ACTIVE - payments will fire.  SUSPENDED - no payments will fire, CANCELLED - no payments will fire cannot be restarted </td>
+            <td>Status of the payment plan.  ACTIVE - payments will fire.  SUSPENDED - no payments will fire, CANCELLED - no payments will fire and cannot be restarted </td>
         </tr>
         
     </table>
@@ -966,7 +966,7 @@ in the header</p>
 
     <h3> Create a Plan </h3>
 
-    <p>Plan must have a customer-key from a previously related customer.   You can POST application/xml or application/json  to the service.  Make sure you include a valid api-key 
+    <p>Plan must have a customer-key from a previously related customer.   You can POST application/xml or application/json to the service.  Make sure you include a valid api-key. 
 
 in the header</p>
 
@@ -1136,7 +1136,7 @@ in the header</p>
 
     <h3>Update a Payment Plan</h3>
 
-    <p> You can do an HTTP PUT on any field in the payment plan object.  It will update that row in the object.  Keep in mind that updates to payment plans are first in and first out. First you will need to add the plan-key, that was returned on the creation of the customer, to the end of the URL: <BR>
+    <p> You can do an HTTP PUT on any field in the payment plan object, and it will update that row in the object. Keep in mind that updates to payment plans are first in and first out. First, you will need to add the plan-key, that was returned on the creation of the customer, to the end of the URL: <BR>
      https://gateway-sb.clearent.net/rest/v2/payment-plans/<strong>plan_tz1CRPmjbuXB</strong></p>
 
     <table class="api">
@@ -1259,7 +1259,7 @@ in the header</p>
 
     <h3>Delete</h3>
 
-    <p>You can only Delete Plans that are not active and do not have payments assoicated to them.  If your plan has payments , you will recieve an error. You can update the status of the plan to Canceled if it has payments and the plan will be archived after 24 months.   For plans that do NOT have  payments you can use the delete method with the URL.  https://gateway-sb.clearent.net/rest/v2/payment-plans/<strong>plan_tz1CRPmjbuXB</strong> You will get a 200 ok, with object that was deleted returned to you. 
+    <p>You can only Delete Plans that are not active and do not have payments associated to them.  If your plan has payments, you will receive an error. You can update the status of the plan to Canceled if it has payments and the plan will be archived after 24 months. For plans that do NOT have payments you can use the delete method with the URL.  https://gateway-sb.clearent.net/rest/v2/payment-plans/<strong>plan_tz1CRPmjbuXB</strong> You will get a 200 ok, with object that was deleted returned to you. 
 
     </p>
 
