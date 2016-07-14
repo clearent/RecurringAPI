@@ -39,7 +39,7 @@
         <tr>
             <td><strong>email</strong></td>
             <td>Optional</td>
-            <td>Email address for the customer</td>
+            <td>Email address for the customer </td>
         </tr>
         <tr>
             <td><strong>phone</strong></td>
@@ -49,7 +49,7 @@
         <tr>
             <td><strong>comments</strong></td>
              <td>Optional</td>
-            <td>Comments on the customer (Note: Once updated, these comments will override previous comments) </td>
+            <td>Comments on the customer.  Note: Once updated, these comments will override previous comments. </td>
         </tr>
         <tr>
             <td><strong>customer-key</strong></td>
@@ -517,7 +517,7 @@
             <td>
     <textarea>
     		Execute the delete function on the URL with the customer-key.
-            In the header you will need to set the api-key and the content-type to application/xml.
+            In the header you will need to set the api-key and the content-type to application/json.
     </textarea>
             </td>
             <td>
@@ -595,12 +595,12 @@
         <tr>
             <td><strong>exp-date</strong></td>
              <td>Required</td>
-            <td>Expiration date of the card</td>
+            <td>expiration date of the card </td>
         </tr>
         <tr>
             <td><strong>customer-key</strong></td>
               <td>Optional</td>
-            <td>Customer to associate to the token (This is required if you want to use this token with plans/customers)</td>
+            <td>customer to associate to the token.  This is required if you want to use this token with plans/customers</td>
         </tr>
         <tr>
             <td><strong>csc</strong></td>
@@ -610,22 +610,22 @@
         <tr>
             <td><strong>description</strong></td>
             <td>Required</td>
-            <td>Description of the card (i.e. - business card) </td>
+            <td>description of the card (i.e. - business card) </td>
         </tr>
 	 <tr>
             <td><strong>avs-address</strong></td>
             <td>Optional</td>
-            <td>Optional depending on your AVS settings</td>
+            <td>Optional depending on your AVS settings.  </td>
         </tr>
 	 <tr>
             <td><strong>avs-required</strong></td>
             <td>Optional</td>
-            <td>Defaults to true, but when set to false it will not validate avs address</td>
+            <td>defaults to true. If set to false, it will not validate avs address</td>
         </tr>
          <tr>
             <td><strong>avs-zip</strong></td>
-            <td>Optional</td>
-            <td>Billing zip code of the card number</td>
+            <td>optional</td>
+            <td>billing zip code of the card number</td>
         </tr>
       
     </table>
@@ -1041,44 +1041,18 @@
         <tr>
             <td>
     <textarea>
-     {
-	"code": "201",
-	"status": "SUCCESS",
-	"exchange-id": "f1abade3-335f-41bd-b8d5-f1e55ab5550e",
-	"links": [{
-		"rel": "self",
-		"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
-	}],
-	"payload": {
-		"payloadType": "payment-plan",
-		"payment-plan": {
-			"type": "SUBSCRIPTION",
-			"frequency": "MONTHLY",
-			"plan-key": "plan_tz1CRPmjbuXB",
-			"plan-name": "Platinum Gym Membership",
-			"customer-key": "cust_ImZrZLriYdvj",
-			"token-id": "1100008885022011111",
-			"frequency-day": "15",
-			"frequency-month": "10",
-			"payment-amount": "50.00",
-			"start-date": "2016-08-01",
-			"end-date": "2016-12-01",
-			"status": "ACTIVE",
-			"status-date": "2016-01-26 19:49:12",
-			"links": {
-				"link": [{
-					"rel": "self",
-					"href": "https://gateway-sb.clearent.net/rest/v2/payment-plans/plan_tz1CRPmjbuXB"
-				}, {
-					"rel": "customers",
-					"href": "https://gateway-sb.clearent.net/rest/v2/customers/cust_ImZrZLriYdvj"
-				}, {
-					"rel": "tokens",
-					"href": "https://gateway-sb.clearent.net/rest/v2/tokens/1100008885022011111"
-				}]
-			}
-		}
-	}
+     { 
+    "plan-name":"Platinum Gym Membership", 
+    "type":"SUBSCRIPTION", 
+    "customer-key":"cust_f42eb217-8618-477a-ac26-a90a29f31ba3", 
+    "token-id":"1100009138151231111", 
+    "frequency":"MONTHLY", 
+    "frequency-day":"15", 
+    "frequency-month":"10",
+    "start-date":"2016-08-01", 
+    "end-date":"2016-12-01", 
+    "status":"ACTIVE", 
+    "payment-amount":"50.00" 
 }
     </textarea>
             </td>
@@ -1190,6 +1164,7 @@
 		<metadata />
 	 </payment-plan>
 	</payload>
+	</response>
 
     </textarea>
             </td>
