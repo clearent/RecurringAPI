@@ -633,9 +633,7 @@
 
     <h3> Create a token </h3>
 
-    <p>Plan must have a customer-key from a previously related customer.  Use url https://gateway-sb.clearent.net/rest/v2/tokens You can POST application/xml or application/json to the service.  Make sure you include a valid api-key. 
-
-in the header</p>
+    <p>Plan must have a customer-key from a previously related customer.  Use url https://gateway-sb.clearent.net/rest/v2/tokens You can POST application/xml or application/json to the service.  Make sure you include a valid api-key in the header.</p>
 
     <table class="api" class="api">
         <tr>
@@ -966,9 +964,7 @@ in the header</p>
 
     <h3> Create a Plan </h3>
 
-    <p>Plan must have a customer-key from a previously related customer.   You can POST application/xml or application/json to the service.  Make sure you include a valid api-key. 
-
-in the header</p>
+    <p>Plan must have a customer-key from a previously related customer.   You can POST application/xml or application/json to the service.  Make sure you include a valid api-key in the header.</p>
 
     <table class="api" class="api">
         <tr>
