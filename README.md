@@ -39,7 +39,7 @@
         <tr>
             <td><strong>email</strong></td>
             <td>Optional</td>
-            <td>Email address for the customer </td>
+            <td>Email address for the customer</td>
         </tr>
         <tr>
             <td><strong>phone</strong></td>
@@ -49,7 +49,7 @@
         <tr>
             <td><strong>comments</strong></td>
              <td>Optional</td>
-            <td>Comments on the customer.  Note: Once updated, these comments will override previous comments. </td>
+            <td>Comments on the customer (Note: Once updated, these comments will override previous comments) </td>
         </tr>
         <tr>
             <td><strong>customer-key</strong></td>
@@ -595,12 +595,12 @@
         <tr>
             <td><strong>exp-date</strong></td>
              <td>Required</td>
-            <td>expiration date of the card </td>
+            <td>Expiration date of the card</td>
         </tr>
         <tr>
             <td><strong>customer-key</strong></td>
               <td>Optional</td>
-            <td>customer to associate to the token.  This is required if you want to use this token with plans/customers</td>
+            <td>Customer to associate to the token (This is required if you want to use this token with plans/customers)</td>
         </tr>
         <tr>
             <td><strong>csc</strong></td>
@@ -610,22 +610,22 @@
         <tr>
             <td><strong>description</strong></td>
             <td>Required</td>
-            <td>description of the card (i.e. - business card) </td>
+            <td>Description of the card (i.e. - business card) </td>
         </tr>
 	 <tr>
             <td><strong>avs-address</strong></td>
             <td>Optional</td>
-            <td>Optional depending on your AVS settings.  </td>
+            <td>Optional depending on your AVS settings</td>
         </tr>
 	 <tr>
             <td><strong>avs-required</strong></td>
             <td>Optional</td>
-            <td>defaults to true. If set to false, it will not validate avs address</td>
+            <td>Defaults to true, but when set to false, it will not validate avs address</td>
         </tr>
          <tr>
             <td><strong>avs-zip</strong></td>
-            <td>optional</td>
-            <td>billing zip code of the card number</td>
+            <td>Optional</td>
+            <td>Billing zip code of the card number</td>
         </tr>
       
     </table>
